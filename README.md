@@ -32,9 +32,9 @@ F_MISSING<0.1: Filters out variants where the fraction of missing genotypes is g
 `bcftools view -H tetraploid_filtered.vcf | wc -l `
 
 ### For the next analysis we don't need the others chromosome, so we can remove them  
-`$ bgzip -c tetraploid_filtered.vcf > tetraploid_filtered.vcf.gz    
-$ bcftools index tetraploid_filtered.vcf.gz    
-$ bcftools view -r chr01,chr02,chr03,chr04,chr05,chr06,chr07,chr08,chr09,chr10,chr11,chr12 tetraploid_filtered.vcf.gz -o tetraploid_filtered_chr.vcf`  
+`$ bgzip -c tetraploid_filtered.vcf > tetraploid_filtered.vcf.gz   
+ $ bcftools index tetraploid_filtered.vcf.gz   
+ $ bcftools view -r chr01,chr02,chr03,chr04,chr05,chr06,chr07,chr08,chr09,chr10,chr11,chr12 tetraploid_filtered.vcf.gz -o tetraploid_filtered_chr.vcf`  
 
 ### We can transform the  tetraploid_filtered_chr.vcf to a diploid format to use in packages that don't support the poly format  
 `bcftools +fixploidy tetraploid_filtered_chr.vcf -- -f 2 > diploid_filtered_chr.vcf`  
