@@ -39,4 +39,7 @@ F_MISSING<0.1: Filters out variants where the fraction of missing genotypes is g
 ### We can transform the  tetraploid_filtered_chr.vcf to a diploid format to use in packages that don't support the poly format  
 `bcftools +fixploidy tetraploid_filtered_chr.vcf -- -f 2 > diploid_filtered_chr.vcf`  
 
+### Calculating the pi value for each SNP  
+`vcftools --vcf your_file.vcf --site-pi --out output`  
+
 
