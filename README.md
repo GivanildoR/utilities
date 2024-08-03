@@ -1,4 +1,4 @@
-# utilities for the LMH genomic data analysis 🥔  
+# utilities for the genomic polyploid data analysis 🥔  
 Just to support the script organization  
   
 module load bcftools  
@@ -24,6 +24,9 @@ QUAL>10: Filters out variants with a quality score less than or equal to 10.
 FORMAT/DP>40: Filters out variants where the depth of coverage is less than or equal to 40.  
 AF>0.05: Filters out variants with an allele frequency less than or equal to 0.05.  
 F_MISSING<0.1: Filters out variants where the fraction of missing genotypes is greater than or equal to 10%.  
+
+### Filtering by bi-allelic SNPs  
+`bcftools view -m2 -M2 -v snps -o tetraploid_lgc_filtered_chr_renamed_recod_bi.vcf tetraploid_lgc_filtered_chr_renamed_recod.vcf`  
 
 ### We can check the chromosome that remained  
 `awk '!/^#/ {print $1}' tetraploid_filtered.vcf | sort -u`  
