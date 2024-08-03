@@ -1,10 +1,10 @@
 # utilities for the genomic polyploid data analysis 🥔  
 Just to support the script organization  
   
-module load bcftools  
+`module load bcftools` 
   
 ### Checking the total of SNPs in a vcf file  
-bcftools view -H USP_191101_RAW_SNPs.vcf | wc -l
+`bcftools view -H USP_191101_RAW_SNPs.vcf | wc -l`
   
 ### Changing/modifying/renaming the sample names in the vcf file    
 Go to [Renaming the samples in the vcf file](https://github.com/GivanildoR/tutorial_polyploid/blob/main/README.md)
