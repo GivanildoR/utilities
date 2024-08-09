@@ -28,6 +28,9 @@ F_MISSING<0.1: Filters out variants where the fraction of missing genotypes is g
 ### Filtering by bi-allelic SNPs  
 `bcftools view -m2 -M2 -v snps -o tetraploid_lgc_filtered_chr_renamed_recod_bi.vcf tetraploid_lgc_filtered_chr_renamed_recod.vcf`  
 
+### Filtering by non-indels  
+`bcftools view -v snps tetraploid_lgc_filtered_chr_renamed_recod_bi.vcf.gz -o out_snps.vcf`  
+
 ### We can check the chromosome that remained  
 `awk '!/^#/ {print $1}' tetraploid_filtered.vcf | sort -u`  
 
